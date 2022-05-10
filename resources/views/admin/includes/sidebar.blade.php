@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('admin.category.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-list-alt"></i>
                         <p>
                             Категории
