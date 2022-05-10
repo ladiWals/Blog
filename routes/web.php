@@ -17,12 +17,15 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::group(['namespace' => 'Main'], function() {
-    Route::get('', 'IndexController');
+    Route::get('/', 'IndexController');
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
     Route::group(['namespace' => 'Main'], function() {
-        Route::get('', 'IndexController');
+        Route::get('/', 'IndexController');
+    });
+    Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function() {
+        Route::get('/', 'IndexController');
     });
 });
 
