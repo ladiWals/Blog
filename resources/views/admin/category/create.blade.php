@@ -19,10 +19,14 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <form action="">
+                        <form method="post" action="{{ route('admin.category.store') }}">
+                            @csrf
                             <div class="form-group">
                                 <label for="title">Название</label>
-                                <input type="text" class="form-control" id="title" placeholder="Название категории">
+                                <input type="text" class="form-control" name="title" id="title" placeholder="Название категории">
+                                @error('title')
+                                <div class="text-danger">Заполните поле</div>
+                                @enderror
                             </div>
                             <input type="submit" class="btn btn-success" value="Создать">
                         </form>
