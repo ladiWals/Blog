@@ -28,6 +28,7 @@
                                         <th>ID</th>
                                         <th>Название</th>
                                         <th>Смотреть</th>
+                                        <th>Редактировать</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -35,7 +36,8 @@
                                         <tr>
                                             <td>{{ $category->id }}</td>
                                             <td>{{ $category->title }}</td>
-                                            <td class="col-1"><a href="{{ route('admin.category.show', $category->id) }}"><i class="far fa-eye"></i></a></td>
+                                            <td class="col-1 text-center"><a href="{{ route('admin.category.show', $category->id) }}"><i class="far fa-eye"></i></a></td>
+                                            <td class="col-1 text-center"><a href="{{ route('admin.category.edit', $category->id) }}"><i class="far fa-edit"></i></a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>
