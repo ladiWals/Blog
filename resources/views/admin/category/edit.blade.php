@@ -15,8 +15,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <form method="post" action="#">
+                        <form method="post" action="{{ route('admin.category.update', $category->id) }}">
                             @csrf
+                            @method('patch')
                             <div class="form-group">
                                 <label for="title">Название</label>
                                 <input type="text" class="form-control" name="title" value="{{ $category->title }}" id="title" placeholder="Название категории">
