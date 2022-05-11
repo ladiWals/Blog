@@ -33,6 +33,9 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <a class="btn btn-primary" href="{{ route('admin.category.edit', $category->id) }}">Редактировать</a>
+                </div>
             </div>
         </section>
     </div>
