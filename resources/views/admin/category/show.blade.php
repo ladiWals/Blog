@@ -34,9 +34,17 @@
                     </div>
                 </div>
                 <div>
-                    <a class="btn btn-primary" href="{{ route('admin.category.edit', $category->id) }}">
+                    <a class="btn btn-primary mr-1" href="{{ route('admin.category.edit', $category->id) }}">
                         Редактировать <i class="far fa-edit"></i>
                     </a>
+                    <form method="post" action="{{ route('admin.category.delete', $category->id) }}" class="d-inline">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-danger">
+                            Удалить
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>

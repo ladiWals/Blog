@@ -27,8 +27,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Название</th>
-                                        <th>Смотреть</th>
-                                        <th>Редактировать</th>
+                                        <th colspan="3" class="text-center">Действия</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -36,8 +35,22 @@
                                         <tr>
                                             <td>{{ $category->id }}</td>
                                             <td>{{ $category->title }}</td>
-                                            <td class="col-1 text-center"><a href="{{ route('admin.category.show', $category->id) }}"><i class="far fa-eye"></i></a></td>
-                                            <td class="col-1 text-center"><a href="{{ route('admin.category.edit', $category->id) }}"><i class="far fa-edit"></i></a></td>
+                                            <td class="col-1 text-center"><a
+                                                    href="{{ route('admin.category.show', $category->id) }}"><i
+                                                        class="far fa-eye"></i></a></td>
+                                            <td class="col-1 text-center text-success"><a class="text-success"
+                                                                                          href="{{ route('admin.category.edit', $category->id) }}"><i
+                                                        class="far fa-edit"></i></a></td>
+                                            <td class="col-1 text-center">
+                                                <form method="post"
+                                                      action="{{ route('admin.category.delete', $category->id) }}">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit" class="border-0 bg-transparent">
+                                                        <i class="fas fa-trash text-danger"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>
