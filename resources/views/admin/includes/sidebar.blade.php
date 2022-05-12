@@ -18,7 +18,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
                 <li class="nav-header">КОНТЕНТ</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('admin.post.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-align-justify"></i>
                         <p>
                             Посты
