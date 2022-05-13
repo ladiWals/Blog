@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Блог :: Список постов</title>
-    <link rel="stylesheet" href="{{ asset('assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/font-awesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/aos/aos.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <script src="{{ asset('assets/vendors/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/loader.js') }}"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.3.0/css/flag-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" href="{{ asset('css/edica/style.css') }}">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{{ asset('js/edica/loader.js') }}"></script>
 </head>
+
 <body>
 <div class="edica-loader"></div>
 <header class="edica-header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#"><img src="{{ asset('assets/images/logo.svg') }}" alt="Ladiwals  logo"></a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#"><img src="{{ asset('img/edica/logo.svg') }}" alt="Ladiwals  logo"></a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav"
+                    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="edicaMainNav">
@@ -48,7 +53,7 @@
         <div class="row footer-widget-area">
             <div class="col-md-3">
                 <a href="#" class="footer-brand-wrapper">
-                    <img src="{{ asset('assets/images/logo.svg') }}" alt="Ladiwals logo">
+                    <img src="{{ asset('img/edica/logo.svg') }}" alt="Ladiwals logo">
                 </a>
                 <p class="contact-details">vladjeslav@gmail.com</p>
                 <p class="contact-details">+7 916 647 15 15</p>
@@ -79,15 +84,15 @@
         </div>
     </div>
 </footer>
-<script src="{{ asset('assets/vendors/popper.js/popper.min.js') }}"></script>
-<script src="{{ asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/vendors/aos/aos.js') }}"></script>
-<script src="{{ asset('assets/js/main.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.5/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="{{ asset('js/edica/main.js') }}"></script>
 <script>
     AOS.init({
         duration: 1000
     });
 </script>
-</body>
 
+</body>
 </html>

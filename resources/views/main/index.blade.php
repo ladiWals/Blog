@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-md-4 fetured-post blog-post" data-aos="fade-right">
                         <div class="blog-post-thumbnail-wrapper">
-                            <img src="{{ asset('assets/images/blog_1.jpg') }}" alt="blog post">
+                            <img src="{{ asset('img/edica/blog_1.jpg') }}" alt="blog post">
                         </div>
                         <p class="blog-post-category">8 февраля</p>
                         <a href="#" class="blog-post-permalink">
@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-md-4 fetured-post blog-post" data-aos="fade-up">
                         <div class="blog-post-thumbnail-wrapper">
-                            <img src="{{ asset('assets/images/blog_2.jpg') }}" alt="blog post">
+                            <img src="{{ asset('img/edica/blog_2.jpg') }}" alt="blog post">
                         </div>
                         <p class="blog-post-category">6 апреля</p>
                         <a href="#" class="blog-post-permalink">
@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-md-4 fetured-post blog-post" data-aos="fade-left">
                         <div class="blog-post-thumbnail-wrapper">
-                            <img src="{{ asset('assets/images/blog_3.jpg') }}" alt="blog post">
+                            <img src="{{ asset('img/edica/blog_3.jpg') }}" alt="blog post">
                         </div>
                         <p class="blog-post-category">9 мая</p>
                         <a href="#" class="blog-post-permalink">
@@ -38,7 +38,7 @@
                 <div class="row">
                     <div class="col-md-4 fetured-post blog-post" data-aos="fade-right">
                         <div class="blog-post-thumbnail-wrapper">
-                            <img src="{{ asset('assets/images/blog_1.jpg') }}" alt="blog post">
+                            <img src="{{ asset('img/edica/blog_1.jpg') }}" alt="blog post">
                         </div>
                         <p class="blog-post-category">8 февраля</p>
                         <a href="#" class="blog-post-permalink">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-md-4 fetured-post blog-post" data-aos="fade-up">
                         <div class="blog-post-thumbnail-wrapper">
-                            <img src="{{ asset('assets/images/blog_2.jpg') }}" alt="blog post">
+                            <img src="{{ asset('img/edica/blog_2.jpg') }}" alt="blog post">
                         </div>
                         <p class="blog-post-category">6 апреля</p>
                         <a href="#" class="blog-post-permalink">
@@ -56,7 +56,7 @@
                     </div>
                     <div class="col-md-4 fetured-post blog-post" data-aos="fade-left">
                         <div class="blog-post-thumbnail-wrapper">
-                            <img src="{{ asset('assets/images/blog_3.jpg') }}" alt="blog post">
+                            <img src="{{ asset('img/edica/blog_3.jpg') }}" alt="blog post">
                         </div>
                         <p class="blog-post-category">9 мая</p>
                         <a href="#" class="blog-post-permalink">
