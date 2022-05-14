@@ -10,7 +10,10 @@ class UpdateController
     public function __invoke(UpdateRequest $request, Post $post)
     {
         $data = $request->validated();
+        $tags = $data['tags'];
+        unset($data['tags']);
         $post->update($data);
+        $post->tags()->sync($tags);
         return redirect()->route('admin.post.show', $post->id);
     }
 }

@@ -42,6 +42,19 @@
                                     @endforeach
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="tags">Tags</label>
+                                <select multiple name="tags[]" class="form-control mb-3" id="tags">
+                                    @foreach ($tags as $tag)
+                                        <option
+                                            value="{{ $tag->id }}"
+                                            {{ $post->tags->pluck('id')->contains($tag->id) ? 'selected' : '' }}
+                                        >
+                                            {{ $tag->title }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <input type="submit" class="btn btn-primary" value="Обновить">
                         </form>
                     </div>

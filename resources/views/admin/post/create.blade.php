@@ -19,11 +19,37 @@
                             @csrf
                             <div class="form-group">
                                 <label for="title">Название</label>
-                                <input type="text" class="form-control" name="title" id="title"
-                                       placeholder="Название поста">
+                                <input type="text" class="form-control" name="title" id="title" placeholder="Название поста">
                                 @error('title')
                                 <div class="text-danger">Заполните поле</div>
                                 @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="content">Контент</label>
+                                <input type="text" class="form-control" name="content" id="content" placeholder="Содержимое поста">
+                                @error('content')
+                                <div class="text-danger">Заполните поле</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <select name="category_id" class="form-control" id="category">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">
+                                            {{ $category->title }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tags">Tags</label>
+                                <select multiple name="tags[]" class="form-control mb-3" id="tags">
+                                    @foreach ($tags as $tag)
+                                        <option value="{{ $tag->id }}">
+                                            {{ $tag->title }}
+                                        </option>
+                                    @endforeach
+                                </select>
                             </div>
                             <input type="submit" class="btn btn-success" value="Создать">
                         </form>

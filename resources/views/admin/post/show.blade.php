@@ -35,6 +35,10 @@
                                             <td>Категория</td>
                                             <td>{{ $post->category->title }}</td>
                                         </tr>
+                                        <tr>
+                                            <td>Теги</td>
+                                            <td class="text">{{ implode(', ', $post->tags->pluck('title')->toArray()) }}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

@@ -10,7 +10,10 @@ class StoreController
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        Post::firstOrCreate($data);
+        $tags = $data['tags'];
+        unset($data['tags']);
+        $post = Post::create($data);
+        $post->tags()->attach($tags);
         return redirect()->route('admin.post.index');
     }
 }
