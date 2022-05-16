@@ -27,7 +27,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="content">Контент</label>
-                                <input type="text" class="form-control" name="content" value="{{ $post->content }}" id="content" placeholder="Содержимое поста">
+                                <textarea id="content" name="content">{{ $post->content }}</textarea>
                                 @error('content')
                                 <div class="text-danger">Заполните поле</div>
                                 @enderror
@@ -62,4 +62,11 @@
             </div>
         </section>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('#content').summernote({
+                height: 250
+            });
+        });
+    </script>
 @endsection
