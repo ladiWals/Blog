@@ -10,8 +10,12 @@ class StoreController
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        $tags = $data['tags'];
-        unset($data['tags']);
+        if (array_key_exists('tags', $data)) {
+            $tags = $data['tags'];
+            unset($data['tags']);
+        } else {
+            $tags = [];
+        }
         $post = Post::create($data);
         $post->tags()->attach($tags);
         return redirect()->route('admin.post.index');
