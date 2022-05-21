@@ -61,7 +61,13 @@
     <script>
         $(document).ready(function() {
             $('#content').summernote({
-                height: 250
+                height: 250,
+                toolbar: [
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['para', ['ul', 'ol']],
+                    ['insert', ['link', 'video']],
+                    ['view', ['codeview', 'help']]
+                ]
             });
         });
     </script>

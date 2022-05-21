@@ -29,7 +29,7 @@
                                         </tr>
                                         <tr>
                                             <td>Контент</td>
-                                            <td>{{ $post->content }}</td>
+                                            <td>{!! $post->content !!}</td>
                                         </tr>
                                         <tr>
                                             <td>Категория</td>
