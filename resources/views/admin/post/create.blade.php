@@ -19,14 +19,23 @@
                             @csrf
                             <div class="form-group">
                                 <label for="title">Название</label>
-                                <input type="text" class="form-control" name="title" id="title" placeholder="Название поста">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="title"
+                                    id="title"
+                                    placeholder="Название поста"
+                                    value="{{ old('title') }}"
+                                >
                                 @error('title')
                                 <div class="text-danger">Заполните поле</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="content">Контент</label>
-                                <textarea id="content" name="content"></textarea>
+                                <textarea id="content" name="content">
+                                    {{ old('content') }}
+                                </textarea>
                                 @error('content')
                                 <div class="text-danger">Заполните поле</div>
                                 @enderror
@@ -59,7 +68,7 @@
         </section>
     </div>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#content').summernote({
                 height: 250,
                 toolbar: [
