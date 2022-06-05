@@ -54,7 +54,7 @@
                                 <label for="tags">Tags</label>
                                 <select multiple name="tags[]" class="form-control mb-3" id="tags">
                                     @foreach ($tags as $tag)
-                                        <option value="{{ $tag->id }}">
+                                        <option value="{{ $tag->id }}" {{ is_array(old('tags')) && in_array($tag->id, old('tags')) ? 'selected' : '' }}>
                                             {{ $tag->title }}
                                         </option>
                                     @endforeach
@@ -64,7 +64,7 @@
                                 <label for="image">Добавить главное изображение</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="image" name="image">
+                                        <input type="file" class="custom-file-input" id="image" name="image" value="{{ old('image') }}">
                                         <label class="custom-file-label" for="image">Выберите файл</label>
                                     </div>
                                     <div class="input-group-append">
@@ -79,7 +79,7 @@
                                 <label for="preview_image">Добавить превью</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="preview_image" name="preview_image">
+                                        <input type="file" class="custom-file-input" id="preview_image" name="preview_image" value="{{ old('preview_image') }}">
                                         <label class="custom-file-label" for="preview_image">Выберите файл</label>
                                     </div>
                                     <div class="input-group-append">
