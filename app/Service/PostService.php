@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Models\Post;
 use Exception;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class PostService
@@ -11,7 +12,7 @@ class PostService
     public function store(array $data): Post
     {
         try {
-
+            DB::beginTransaction();
             if (array_key_exists('tags', $data)) {
                 $tags = $data['tags'];
                 unset($data['tags']);
@@ -29,7 +30,9 @@ class PostService
             }
             $post = Post::create($data);
             $post->tags()->attach($tags);
+            Db::commit();
         } catch (Exception) {
+            DB::rollBack();
             abort(500);
         }
 
@@ -39,6 +42,7 @@ class PostService
     public function update(Post $post, array $data): Post
     {
         try {
+            DB::beginTransaction();
             if (array_key_exists('tags', $data)) {
                 $tags = $data['tags'];
                 unset($data['tags']);
@@ -58,7 +62,9 @@ class PostService
 
             $post->update($data);
             $post->tags()->sync($tags);
+            Db::commit();
         } catch (Exception) {
+            DB::rollBack();
             abort(500);
         }
 
