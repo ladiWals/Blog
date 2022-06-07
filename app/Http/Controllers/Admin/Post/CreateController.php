@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Post;
 use App\Models\Category;
 use App\Models\Tag;
 
-class CreateController
+class CreateController extends BaseController
 {
     public function __invoke()
     {

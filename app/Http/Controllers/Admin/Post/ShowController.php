@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Post;
 
 use App\Models\Post;
 
-class ShowController
+class ShowController extends BaseController
 {
     public function __invoke(Post $post)
     {

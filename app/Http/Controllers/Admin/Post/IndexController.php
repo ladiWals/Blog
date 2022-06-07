@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Post;
 
 use App\Models\Post;
 
-class IndexController
+class IndexController extends BaseController
 {
     public function __invoke()
     {
