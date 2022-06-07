@@ -19,33 +19,57 @@
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
                                     <tbody>
-                                        <tr>
-                                            <td>ID</td>
-                                            <td>{{ $post->id }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Название</td>
-                                            <td>{{ $post->title }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Контент</td>
-                                            <td>{!! $post->content !!}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Категория</td>
-                                            <td>{{ $post->category->title }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Теги</td>
-                                            <td class="text">{{ implode(', ', $post->tags->pluck('title')->toArray()) }}</td>
-                                        </tr>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>{{ $post->id }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Название</td>
+                                        <td>{{ $post->title }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Контент</td>
+                                        <td>{!! $post->content !!}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Категория</td>
+                                        <td>{{ $post->category->title }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Теги</td>
+                                        <td class="text">{{ implode(', ', $post->tags->pluck('title')->toArray()) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Главное изображение</td>
+                                        <td class="text">
+                                            @if(!empty($post->image))
+                                                <img class="w-75"
+                                                     src="{{ asset('/storage/' . $post->image) }}"
+                                                     alt="image">
+                                            @else
+                                                <span>-</span>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Превью</td>
+                                        <td class="text">
+                                            @if(!empty($post->preview_image))
+                                                <img class="w-75"
+                                                     src="{{ asset('/storage/' . $post->preview_image) }}"
+                                                     alt="preview_image">
+                                            @else
+                                                <span>-</span>
+                                            @endif
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="mb-4">
                     <a class="btn btn-primary mr-1" href="{{ route('admin.post.edit', $post->id) }}">
                         Редактировать <i class="far fa-edit"></i>
                     </a>

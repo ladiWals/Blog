@@ -17,8 +17,15 @@ class StoreController
         } else {
             $tags = [];
         }
-        $data['image'] = Storage::put('images', $data['image']);
-        $data['preview_image'] = Storage::put('images', $data['preview_image']);
+        if (array_key_exists('image', $data)) {
+            $data['image'] = Storage::disk('public')
+                ->put('images', $data['image']);
+        }
+
+        if (array_key_exists('preview_image', $data)) {
+            $data['preview_image'] = Storage::disk('public')
+                ->put('images', $data['preview_image']);
+        }
         $post = Post::create($data);
         $post->tags()->attach($tags);
         return redirect()->route('admin.post.index');

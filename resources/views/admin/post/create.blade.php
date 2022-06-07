@@ -61,7 +61,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="image">Добавить главное изображение</label>
+                                <label for="image">Главное изображение</label>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="image" name="image" value="{{ old('image') }}">
@@ -76,7 +76,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="preview_image">Добавить превью</label>
+                                <label for="preview_image">Превью</label>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="preview_image" name="preview_image" value="{{ old('preview_image') }}">
@@ -90,7 +90,7 @@
                                 <div class="text-danger">Загрузите файл</div>
                                 @enderror
                             </div>
-                            <input type="submit" class="btn btn-success" value="Создать">
+                            <input type="submit" class="btn btn-success mb-4" value="Создать">
                         </form>
                     </div>
                 </div>
