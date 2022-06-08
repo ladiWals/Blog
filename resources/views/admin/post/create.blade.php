@@ -28,7 +28,7 @@
                                     value="{{ old('title') }}"
                                 >
                                 @error('title')
-                                <div class="text-danger">Заполните поле</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
@@ -37,11 +37,11 @@
                                     {{ old('content') }}
                                 </textarea>
                                 @error('content')
-                                <div class="text-danger">Заполните поле</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="category">Category</label>
+                                <label for="category">Категория</label>
                                 <select name="category_id" class="form-control" id="category">
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">
@@ -49,9 +49,12 @@
                                         </option>
                                     @endforeach
                                 </select>
+                                @error('category_id')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <label for="tags">Tags</label>
+                                <label for="tags">Тэги</label>
                                 <select multiple name="tags[]" class="form-control mb-3" id="tags">
                                     @foreach ($tags as $tag)
                                         <option value="{{ $tag->id }}" {{ is_array(old('tags')) && in_array($tag->id, old('tags')) ? 'selected' : '' }}>
@@ -59,6 +62,9 @@
                                         </option>
                                     @endforeach
                                 </select>
+                                @error('tags')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="image">Главное изображение</label>
@@ -72,7 +78,7 @@
                                     </div>
                                 </div>
                                 @error('image')
-                                <div class="text-danger">Загрузите файл</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
@@ -87,7 +93,7 @@
                                     </div>
                                 </div>
                                 @error('preview_image')
-                                <div class="text-danger">Загрузите файл</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <input type="submit" class="btn btn-success mb-4" value="Создать">

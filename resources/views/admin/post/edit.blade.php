@@ -35,7 +35,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="category">Category</label>
+                                <label for="category">Категория</label>
                                 <select name="category_id" class="form-control" id="category">
                                     @foreach ($categories as $category)
                                         <option
@@ -44,9 +44,12 @@
                                         </option>
                                     @endforeach
                                 </select>
+                                @error('category_id')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <label for="tags">Tags</label>
+                                <label for="tags">Тэги</label>
                                 <select multiple name="tags[]" class="form-control mb-3" id="tags">
                                     @foreach ($tags as $tag)
                                         <option
@@ -57,6 +60,9 @@
                                         </option>
                                     @endforeach
                                 </select>
+                                @error('tags')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="image">Главное изображение</label>
@@ -79,7 +85,7 @@
                                     </div>
                                 </div>
                                 @error('image')
-                                <div class="text-danger">Загрузите файл</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
@@ -103,7 +109,7 @@
                                     </div>
                                 </div>
                                 @error('preview_image')
-                                <div class="text-danger">Загрузите файл</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <input type="submit" class="btn btn-primary mb-4" value="Обновить">
