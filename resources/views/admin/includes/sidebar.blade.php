@@ -43,7 +43,7 @@
                 </li>
                 <li class="nav-header">ПОЛЬЗОВАТЕЛИ</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('admin.user.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Активные
